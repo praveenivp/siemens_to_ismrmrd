@@ -246,7 +246,7 @@
                                     <name>SpiralType</name>
                                     <value>
                                         <xsl:value-of select="."/>
-                                        <!-- 1-SPiralOut   2.SpiralIn 3.SpiralDouble 4.SpiralInOut-->
+                                        <!-- 1-SPiralOut  2.SpiralIn 3.SpiralDouble 4.SpiralInOut-->
                                     </value>
                                 </userParameterLong>
                             </xsl:if> 
