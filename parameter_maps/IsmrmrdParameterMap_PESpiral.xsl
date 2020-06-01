@@ -242,13 +242,14 @@
                             <xsl:variable name="CurLong" select="position()"/>
 
                             <xsl:if test="$CurLong = 4" >
-                            <userParameterLong>
-                                <name>typesp</name>
-                                <value>
-                                    <xsl:value-of select="."/>
-                                </value>
-                            </userParameterLong>
-                            </xsl:if>
+                                <userParameterLong>
+                                    <name>SpiralType</name>
+                                    <value>
+                                        <xsl:value-of select="."/>
+                                        <!-- 1-SPiralOut   2.SpiralIn 3.SpiralDouble 4.SpiralInOut-->
+                                    </value>
+                                </userParameterLong>
+                            </xsl:if> 
 
                             <!-- <userParameterLong>
                                 <name>sNavigatorPara.alFree[<xsl:value-of select="$CurLong - 1" />]</name>
