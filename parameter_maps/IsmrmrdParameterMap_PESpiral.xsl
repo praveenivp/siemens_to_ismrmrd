@@ -273,9 +273,9 @@
                         </userParameterLong>
 
 
-                        <xsl:for-each select="siemens/MEAS/alDwellTime">
-                            <xsl:variable name="CurLong" select="position()"/>
-                            <xsl:if test="$CurLong = 0" >
+                        <xsl:for-each select="siemens/MEAS/sRXSPEC/alDwellTime">
+                            <xsl:variable name="CurrLong" select="position()"/>
+                            <xsl:if test="$CurrLong = 1" >
                             <userParameterLong>
                                 <name>DwellTime_ns</name>
                                 <value>
@@ -285,14 +285,14 @@
                             </xsl:if>
                            
                         </xsl:for-each>
-                        <xsl:if test="siemens/MEAS/alDwellTime[0]">
+                        <!-- <xsl:if test="siemens/MEAS/alDwellTime[0]">
                         <userParameterLong>
                             <name>SamplingTime_ns</name>
                             <value>
                                 <xsl:value-of select="siemens/MEAS/alDwellTime[0]"/>
                             </value>
                         </userParameterLong>
-                        </xsl:if>
+                        </xsl:if> -->
 
 
                         <xsl:for-each select="siemens/MEAS/sNavigatorPara/adFree">   
@@ -333,9 +333,17 @@
                             
                         <xsl:for-each select="siemens/MEAS/sWipMemBlock/adFree">
                             <xsl:variable name="CurDouble" select="position()"/>
-                            <xsl:if test="$CurDouble = 6" >
+                             <xsl:if test="$CurDouble = 5" >
                             <userParameterDouble>
                                 <name>GradDelay_us</name>
+                                <value>
+                                    <xsl:value-of select="."/>
+                                </value>
+                            </userParameterDouble>
+                            </xsl:if>
+                            <xsl:if test="$CurDouble = 6" >
+                            <userParameterDouble>
+                                <name>ADCShift_us</name>
                                 <value>
                                     <xsl:value-of select="."/>
                                 </value>
