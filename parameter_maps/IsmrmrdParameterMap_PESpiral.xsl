@@ -483,7 +483,7 @@
                         </xsl:choose>
                         <y>
                             <xsl:value-of
-                                    select="siemens/MEAS/sSliceArray/asSlice/s0/dPhaseFOV * (1+$phaseOversampling)"/>
+                                    select="siemens/MEAS/sSliceArray/asSlice/s0/dReadoutFOV"/>  <!-- * (1+$phaseOversampling)"/> piv edit-->
                         </y>
                         <z>
                             <xsl:value-of
@@ -494,10 +494,10 @@
                 <reconSpace>
                     <matrixSize>
                         <x>
-                            <xsl:value-of select="siemens/IRIS/DERIVED/imageColumns"/>
+                            <xsl:value-of select="siemens/MEAS/sSliceArray/asSlice/s0/dReadoutFOV"/>
                         </x>
                         <y>
-                            <xsl:value-of select="siemens/IRIS/DERIVED/imageLines"/>
+                            <xsl:value-of select="siemens/MEAS/sSliceArray/asSlice/s0/dReadoutFOV"/><!-- piv siemens/IRIS/DERIVED/imageLines"/> -->
                         </y>
                         <xsl:choose>
                             <xsl:when test="siemens/YAPS/i3DFTLength = 1">
@@ -515,7 +515,7 @@
                             <xsl:value-of select="siemens/MEAS/sSliceArray/asSlice/s0/dReadoutFOV"/>
                         </x>
                         <y>
-                            <xsl:value-of select="siemens/MEAS/sSliceArray/asSlice/s0/dPhaseFOV"/>
+                            <xsl:value-of select="siemens/MEAS/sSliceArray/asSlice/s0/dReadoutFOV"/> <!--piv edit-->
                         </y>
                         <z>
                             <xsl:value-of select="siemens/MEAS/sSliceArray/asSlice/s0/dThickness"/>
